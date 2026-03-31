@@ -1,4 +1,8 @@
-// -- Intersection Observer: reveal animations --
+// =============================================
+// Clara LP — Main Script
+// =============================================
+
+// -- Intersection Observer: reveal all animation classes --
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -12,12 +16,20 @@ const revealObserver = new IntersectionObserver(
 );
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Animate elements on scroll
-  document.querySelectorAll('.animate').forEach((el) => {
+  // Observe all animated elements
+  document.querySelectorAll('.animate, .reveal-up, .reveal-left').forEach((el) => {
     revealObserver.observe(el);
   });
 
-  // Nav: add scrolled class for background change
+  // Hero content: trigger immediately (above fold)
+  const heroContent = document.querySelector('.hero-content');
+  if (heroContent) {
+    requestAnimationFrame(() => {
+      setTimeout(() => heroContent.classList.add('visible'), 100);
+    });
+  }
+
+  // Nav: glass + scrolled class
   const nav = document.getElementById('main-nav');
   const onScroll = () => {
     if (window.scrollY > 20) {
@@ -27,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // check on load
+  onScroll();
 
-  // Smooth scroll for anchor links
+  // Smooth anchor scroll
   document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {
       const href = a.getAttribute('href');
@@ -54,6 +66,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Parallax on hero BG
+  const heroBg = document.querySelector('.hero-bg-img') as HTMLElement | null;
+  if (heroBg) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      if (scrolled < window.innerHeight) {
+        heroBg.style.transform = `translateY(${scrolled * 0.3}px)`;
+      }
+    }, { passive: true });
+  }
 
   console.log('Clara LP — AMO Embarque ✓');
 });

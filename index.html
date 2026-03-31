@@ -7,14 +7,21 @@
     <meta name="description" content="Conheça a Clara, a assistente ultra inteligente da AMO Embarque que acompanha você em todas as etapas da sua viagem, 24 horas por dia." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,300;1,14..32,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
+    <!-- Animated BG -->
+    <div class="bg-animated" aria-hidden="true">
+      <div class="bg-orb orb-1"></div>
+      <div class="bg-orb orb-2"></div>
+      <div class="bg-orb orb-3"></div>
+    </div>
+
     <div id="app">
 
       <!-- NAV -->
-      <nav class="nav" id="main-nav">
+      <nav class="nav glass" id="main-nav">
         <div class="container nav-container">
           <div class="logo">
             <span class="amo-text">AMO</span>
@@ -35,15 +42,18 @@
         </div>
       </nav>
 
-      <!-- HERO — full viewport, photo fills right column -->
+      <!-- HERO — fullscreen image, text left, character right -->
       <section class="hero" id="hero">
-        <!-- Left: conteúdo -->
-        <div class="hero-content">
+        <div class="hero-bg-img">
+          <img src="/hero-amo.png" alt="Viajante AMO Embarque feliz no avião" />
+        </div>
+
+        <div class="hero-content reveal-left">
           <div class="tag-line">Concierge Digital · 24 horas · 7 dias</div>
           <h1>O cuidado da AMO, agora <span class="highlight">24 horas</span> ao seu lado.</h1>
           <p class="hero-desc">Conheça a Clara: a inteligência que nasceu para levar o atendimento exclusivo da AMO Embarque para onde você estiver, a qualquer momento.</p>
 
-          <div class="hero-chat-card">
+          <div class="hero-chat-card glass reveal-up" style="--delay: 0.4s">
             <div class="chat-header">
               <div class="chat-avatar">C</div>
               <div>
@@ -51,18 +61,23 @@
                 <span class="online-dot">● online</span>
               </div>
             </div>
-            <div class="chat-bubble user-bubble">"Clara, perdi mon portão, me ajuda?"</div>
-            <div class="chat-bubble clara-bubble">"Verificando... Portão mudou para B12. Já atualizei seu roteiro! ✓"</div>
+            <div class="chat-bubble user-bubble">"Clara, meu portão mudou, me ajuda?"</div>
+            <div class="chat-bubble clara-bubble typing">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <div class="chat-bubble clara-bubble delayed">"Verificando... Sim! Mudou para o B12. Já atualizei seu roteiro! ✓"</div>
           </div>
 
-          <div class="hero-actions">
+          <div class="hero-actions reveal-up" style="--delay: 0.6s">
             <a href="https://wa.me/5500000000000" class="btn-primary large" id="hero-cta">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               Iniciar atendimento no WhatsApp
             </a>
           </div>
 
-          <div class="hero-stats">
+          <div class="hero-stats glass reveal-up" style="--delay: 0.8s">
             <div class="stat">
               <span class="stat-num">24/7</span>
               <span class="stat-label">Disponível</span>
@@ -80,30 +95,28 @@
           </div>
         </div>
 
-        <!-- Right: foto da Clara em altura total -->
-        <div class="hero-photo">
-          <img src="/clara-hero.png" alt="Clara — Concierge Digital AMO Embarque" id="hero-photo-img">
-        </div>
       </section>
 
       <!-- MANIFESTO / QUEM É -->
       <section id="quem-e" class="manifesto">
         <div class="container">
           <div class="manifesto-grid">
-            <div class="manifesto-visual">
-              <div class="photo-frame">
+            <div class="manifesto-visual animate">
+              <div class="photo-frame glass-card">
                 <img src="/clara-mobile.png" alt="Clara mostrando o WhatsApp">
-                <!-- Placeholder para foto em ambiente de viagem -->
-                <!-- PLACEHOLDER: substituir por foto da Clara em aeroporto ou destino -->
+                <div class="photo-badge glass">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  Resposta em &lt;3 segundos
+                </div>
               </div>
             </div>
-            <div class="manifesto-text">
+            <div class="manifesto-text animate" style="--delay: 0.15s">
               <div class="section-label">Quem é a Clara?</div>
               <h2>Tecnologia com <span class="highlight-underline">Alma</span></h2>
               <p>A Clara não nasceu para substituir pessoas. Ela nasceu para <strong>ampliar o cuidado</strong> que já entregamos. É a evolução da nossa equipe — disponível na palma da sua mão.</p>
 
               <div class="features-list">
-                <div class="feature-item">
+                <div class="feature-item glass-card reveal-up" style="--delay: 0.1s">
                   <div class="feature-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                   </div>
@@ -112,7 +125,7 @@
                     <p>Desenvolvida com o DNA AMO para ser atenta, gentil e responsável.</p>
                   </div>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item glass-card reveal-up" style="--delay: 0.2s">
                   <div class="feature-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="15" x2="13" y2="15"/></svg>
                   </div>
@@ -121,7 +134,7 @@
                     <p>Documentos, regras e roteiros organizados e enviados em segundos.</p>
                   </div>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item glass-card reveal-up" style="--delay: 0.3s">
                   <div class="feature-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                   </div>
@@ -146,7 +159,7 @@
           </div>
           <div class="journey-grid">
 
-            <div class="journey-card animate" data-step="01">
+            <div class="journey-card glass-card animate" data-step="01">
               <div class="journey-step-num">01</div>
               <div class="journey-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -154,27 +167,25 @@
               <div class="journey-tag">Antes de partir</div>
               <h3>O Checklist Perfeito</h3>
               <p>Check-ins, lembrete de documentos, regras de visto e tudo o que você precisa para decolar sem estresse.</p>
-              <!-- PLACEHOLDER: foto da Clara com mala / aeroporto -->
-              <div class="journey-photo-placeholder">
-                <span>FOTO — Pré-viagem</span>
+              <div class="journey-photo">
+                <img src="/clara-pre-viagem.png" alt="Preparativos com a Clara">
               </div>
             </div>
 
-            <div class="journey-card animate journey-card--accent" data-step="02">
+            <div class="journey-card glass-card animate journey-card--accent" data-step="02" style="--delay: 0.1s">
               <div class="journey-step-num">02</div>
               <div class="journey-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.18 12a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L11 17.5a16 16 0 0 0 6 6l.44-.44a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 24 25z"/><path d="M14.05 2a9 9 0 0 1 8 7.94M14.05 6A5 5 0 0 1 18 10"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               </div>
               <div class="journey-tag">Durante a viagem</div>
               <h3>Suporte em Tempo Real</h3>
               <p>Mudanças de portão? Dúvidas sobre o hotel? A Clara responde às 23h, às 6h da manhã e em qualquer fuso.</p>
-              <!-- PLACEHOLDER: foto da Clara em destino / ambiente de viagem -->
-              <div class="journey-photo-placeholder">
-                <span>FOTO — Durante a viagem</span>
+              <div class="journey-photo">
+                <img src="/clara-durante-viagem.png" alt="Suporte durante a viagem">
               </div>
             </div>
 
-            <div class="journey-card animate" data-step="03">
+            <div class="journey-card glass-card animate" data-step="03" style="--delay: 0.2s">
               <div class="journey-step-num">03</div>
               <div class="journey-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -182,9 +193,8 @@
               <div class="journey-tag">No Retorno</div>
               <h3>Experiência Completa</h3>
               <p>Feedback, auxílio com extravios ou seguros, e as primeiras ideias para o seu próximo destino especial.</p>
-              <!-- PLACEHOLDER: foto da Clara no retorno -->
-              <div class="journey-photo-placeholder">
-                <span>FOTO — Pós-viagem</span>
+              <div class="journey-photo">
+                <img src="/clara-pos-viagem.png" alt="Apoio no retorno">
               </div>
             </div>
 
@@ -196,13 +206,20 @@
       <section id="beneficios" class="benefits">
         <div class="container benefits-container">
           <div class="benefits-image animate">
-            <img src="/clara-world.png" alt="Clara assistindo cliente em viagem internacional" class="benefits-img">
+            <div class="glass-card benefits-img-wrap">
+              <img src="/clara-world.png" alt="Clara assistindo cliente em viagem internacional" class="benefits-img">
+              <!-- Floating card -->
+              <div class="float-card glass animate" style="--delay: 0.3s">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <span>Resposta instantânea, sempre</span>
+              </div>
+            </div>
           </div>
-          <div class="benefits-content animate">
+          <div class="benefits-content animate" style="--delay: 0.15s">
             <div class="section-label">Os Benefícios</div>
             <h2>Por que usar a Clara?</h2>
             <ul class="benefit-points">
-              <li>
+              <li class="reveal-up" style="--delay: 0.1s">
                 <div class="benefit-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
@@ -211,7 +228,7 @@
                   <p>Saiba que existe sempre alguém disponível para tirar sua dúvida, a qualquer hora.</p>
                 </div>
               </li>
-              <li>
+              <li class="reveal-up" style="--delay: 0.2s">
                 <div class="benefit-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                 </div>
@@ -220,7 +237,7 @@
                   <p>Sua dúvida não pode esperar o horário comercial? A Clara também não espera.</p>
                 </div>
               </li>
-              <li>
+              <li class="reveal-up" style="--delay: 0.3s">
                 <div class="benefit-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                 </div>
@@ -229,7 +246,7 @@
                   <p>A Clara avisa antes que o problema aconteça. Isso é luxo silencioso.</p>
                 </div>
               </li>
-              <li>
+              <li class="reveal-up" style="--delay: 0.4s">
                 <div class="benefit-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
                 </div>
@@ -252,7 +269,7 @@
             <p>Tudo o que você precisa saber sobre a nossa nova integrante.</p>
           </div>
           <div class="faq-list">
-            <details class="faq-item" id="faq-1">
+            <details class="faq-item glass-card animate" id="faq-1">
               <summary>
                 A Clara é uma pessoa real?
                 <span class="faq-icon">
@@ -263,7 +280,7 @@
                 <p>A Clara é nossa concierge digital ultra inteligente. Ela foi criteriosamente treinada pela nossa equipe para ter o mesmo cuidado e tom de voz dos nossos consultores humanos, mas com a agilidade da tecnologia 24h.</p>
               </div>
             </details>
-            <details class="faq-item" id="faq-2">
+            <details class="faq-item glass-card animate" id="faq-2" style="--delay: 0.05s">
               <summary>
                 Ela substitui o atendimento das consultoras?
                 <span class="faq-icon">
@@ -274,7 +291,7 @@
                 <p>De forma alguma! A Clara é um braço adicional à nossa equipe. O planejamento estratégico e as decisões complexas continuam sendo feitas pelo nosso time humano. A Clara amplia nossa presença no seu cotidiano.</p>
               </div>
             </details>
-            <details class="faq-item" id="faq-3">
+            <details class="faq-item glass-card animate" id="faq-3" style="--delay: 0.1s">
               <summary>
                 Como faço para falar com ela?
                 <span class="faq-icon">
@@ -285,7 +302,7 @@
                 <p>Basta clicar em qualquer botão de WhatsApp aqui no site! Você será direcionado para o chat e poderá começar a tirar suas dúvidas ou consultar seu roteiro imediatamente.</p>
               </div>
             </details>
-            <details class="faq-item" id="faq-4">
+            <details class="faq-item glass-card animate" id="faq-4" style="--delay: 0.15s">
               <summary>
                 A Clara pode me ajudar com emergências?
                 <span class="faq-icon">
@@ -296,7 +313,7 @@
                 <p>Sim! Para dúvidas urgentes de aeroporto, documentos ou check-in, ela está disponível 24/7. Em casos que exijam ação humana direta, ela facilitará o contato com o nosso suporte de emergência.</p>
               </div>
             </details>
-            <details class="faq-item" id="faq-5">
+            <details class="faq-item glass-card animate" id="faq-5" style="--delay: 0.2s">
               <summary>
                 Ela consegue acessar meu roteiro e documentos?
                 <span class="faq-icon">
@@ -315,7 +332,7 @@
       <footer class="footer">
         <div class="footer-cta-block">
           <div class="container">
-            <div class="footer-cta-inner">
+            <div class="footer-cta-inner animate">
               <div class="footer-cta-text">
                 <h2>Sua próxima viagem será mais leve com a Clara.</h2>
                 <p>Comece agora. É só chamar no WhatsApp.</p>
