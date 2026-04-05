@@ -662,7 +662,7 @@ strong { color: var(--black); font-weight: 700; }
   transition: transform 0.8s var(--ease);
 }
 
-.manifesto-text h2 { margin-bottom: 1.5rem; }
+.manifesto-text h2 { margin-bottom: 1.5rem; text-wrap: balance; }
 .manifesto-text > p { margin-bottom: 3rem; }
 
 .features-list {
@@ -746,6 +746,7 @@ strong { color: var(--black); font-weight: 700; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.75rem;
+  align-items: stretch;
 }
 
 .journey-card {
@@ -756,6 +757,7 @@ strong { color: var(--black); font-weight: 700; }
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-height: 480px;
 }
 
 .journey-card::before {
@@ -874,6 +876,24 @@ strong { color: var(--black); font-weight: 700; }
   border-radius: var(--radius-lg);
   overflow: hidden;
   position: relative;
+}
+
+.benefits-image {
+  overflow: hidden;
+}
+
+.benefits-image::before {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .benefits-img {
@@ -1040,6 +1060,7 @@ strong { color: var(--black); font-weight: 700; }
   border-radius: 50%;
   background: radial-gradient(circle, rgba(176,254,4,0.12) 0%, transparent 70%);
   pointer-events: none;
+  opacity: 0.6;
 }
 
 .footer-cta-inner {
