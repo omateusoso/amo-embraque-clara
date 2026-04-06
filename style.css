@@ -974,7 +974,154 @@ strong { color: var(--black); font-weight: 700; }
 }
 .benefit-points p { font-size: 0.9rem; }
 
-/* ===== FAQ ===== */
+/* ===== STEPS SECTION PREMIUM ===== */
+.steps-section {
+  padding: 9rem 0;
+  background: var(--gray-bg);
+  border-top: 1px solid var(--border);
+}
+
+.steps-premium-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto 5rem;
+}
+
+.step-premium-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 2rem 2rem 1.75rem;
+  transition: var(--trans);
+  position: relative;
+  overflow: hidden;
+}
+
+.step-premium-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--green-light) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+  border-radius: inherit;
+}
+
+.step-premium-card:hover {
+  border-color: rgba(140, 201, 3, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.08), 0 0 0 2px var(--green-light);
+}
+
+.step-premium-card:hover::before {
+  opacity: 1;
+}
+
+.step-premium-num {
+  font-size: 2.4rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--green);
+  font-variant-numeric: tabular-nums;
+  min-width: 2.8rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.02em;
+}
+
+.step-premium-body {
+  position: relative;
+  z-index: 1;
+}
+
+.step-premium-body h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 0.35rem;
+}
+
+.step-premium-body p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Manifesto end block */
+.manifesto-end {
+  margin-top: 4rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%);
+  border-radius: var(--radius-lg);
+  padding: 4rem 3rem;
+  position: relative;
+  overflow: hidden;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.manifesto-end::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(176,254,4,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.manifesto-end::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: -40px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(176,254,4,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.manifesto-end-lead {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 1.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.manifesto-end-quote {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+  text-wrap: balance;
+}
+
+.manifesto-end-quote br + * {
+  color: var(--green);
+}
+
+@media (max-width: 900px) {
+  .steps-premium-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 .faq {
   padding: 9rem 0;
   background: var(--gray-bg);
