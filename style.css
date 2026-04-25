@@ -1507,7 +1507,7 @@ strong { color: var(--black); font-weight: 700; }
   }
 
   .hero-bg-img img {
-    object-position: 95% center;
+    object-position: center;
   }
 
   .hero-bg-overlay {
