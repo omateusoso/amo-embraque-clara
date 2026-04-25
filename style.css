@@ -287,23 +287,13 @@ strong { color: var(--black); font-weight: 700; }
 }
 
 .logo {
-  font-size: 1.1rem;
-  font-weight: 900;
-  letter-spacing: 0.05em;
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  color: var(--black);
 }
-.embarque-text { font-weight: 300; }
-.clara-sep { color: var(--gray-light); margin: 0 0.3rem; }
-.clara-text {
-  color: var(--black);
-  background: var(--green);
-  padding: 0.15rem 0.5rem;
-  border-radius: 0.4rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
+.logo-img {
+  max-height: 44px;
+  width: auto;
+  object-fit: contain;
 }
 
 .nav-links {
@@ -430,6 +420,212 @@ strong { color: var(--black); font-weight: 700; }
   box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
+/* Chat card in the manifesto section (replaces the photo) */
+/* =============================================
+   WHATSAPP MOCKUP
+   ============================================= */
+.wa-mockup {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 580px;
+  box-shadow:
+    0 32px 80px rgba(0,0,0,0.18),
+    0 0 0 1px rgba(0,0,0,0.06);
+  font-family: -apple-system, 'Segoe UI', sans-serif;
+}
+
+/* Top bar */
+.wa-topbar {
+  background: #075E54;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.wa-back { color: rgba(255,255,255,0.85); display: flex; align-items: center; }
+
+.wa-contact-avatar {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wa-contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  min-width: 0;
+}
+.wa-contact-info strong {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wa-contact-info span {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.72rem;
+}
+
+.wa-topbar-icons {
+  display: flex;
+  gap: 1.1rem;
+  color: rgba(255,255,255,0.85);
+  flex-shrink: 0;
+}
+
+/* Chat body */
+.wa-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.75rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background-color: #efeae2;
+  /* WhatsApp tile pattern */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23d4c9b8' fill-opacity='0.35'%3E%3Cpath d='M40 0c-2 0-3.5 1.5-3.5 3.5S38 7 40 7s3.5-1.5 3.5-3.5S42 0 40 0zM0 40c0-2-1.5-3.5-3.5-3.5S-7 38-7 40s1.5 3.5 3.5 3.5S0 42 0 40zm80 0c0 2 1.5 3.5 3.5 3.5S87 42 87 40s-1.5-3.5-3.5-3.5S80 38 80 40zM40 80c2 0 3.5-1.5 3.5-3.5S42 73 40 73s-3.5 1.5-3.5 3.5S38 80 40 80z'/%3E%3C/g%3E%3C/svg%3E");
+  scrollbar-width: thin;
+  scrollbar-color: #c1b9ae transparent;
+}
+.wa-body::-webkit-scrollbar { width: 4px; }
+.wa-body::-webkit-scrollbar-thumb { background: #c1b9ae; border-radius: 2px; }
+
+/* Date chip */
+.wa-date-chip {
+  align-self: center;
+  background: rgba(255,255,255,0.82);
+  color: #667781;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.25rem 0.8rem;
+  border-radius: 1rem;
+  margin: 0.5rem 0 0.75rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+
+/* Messages */
+.wa-msg {
+  display: flex;
+  margin-bottom: 0.15rem;
+}
+.wa-msg--in  { justify-content: flex-start; }
+.wa-msg--out { justify-content: flex-end; }
+
+.wa-bubble {
+  max-width: 78%;
+  padding: 0.5rem 0.7rem 0.35rem;
+  border-radius: 0.75rem;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+  line-height: 1.45;
+}
+
+/* Tail (triangle) for incoming */
+.wa-bubble--in {
+  background: #fff;
+  border-top-left-radius: 0.15rem;
+}
+.wa-bubble--in::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -8px;
+  width: 0; height: 0;
+  border-top: 8px solid #fff;
+  border-left: 8px solid transparent;
+}
+
+/* Tail for outgoing */
+.wa-bubble--out {
+  background: #d9fdd3;
+  border-top-right-radius: 0.15rem;
+}
+.wa-bubble--out::before {
+  content: '';
+  position: absolute;
+  top: 0; right: -8px;
+  width: 0; height: 0;
+  border-top: 8px solid #d9fdd3;
+  border-right: 8px solid transparent;
+}
+
+.wa-bubble p {
+  font-size: 0.83rem;
+  color: #111b21;
+  margin: 0 0 0.2rem;
+  word-break: break-word;
+}
+
+.wa-time {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.2rem;
+  font-size: 0.67rem;
+  color: #667781;
+  float: right;
+  margin-left: 0.5rem;
+  margin-top: 0.1rem;
+  line-height: 1;
+}
+
+.wa-check {
+  width: 14px;
+  height: 10px;
+  color: #53bdeb;
+  display: inline-block;
+}
+
+/* Input bar */
+.wa-inputbar {
+  background: #f0f2f5;
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+  border-top: 1px solid #d1d7db;
+}
+
+.wa-input-field {
+  flex: 1;
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 0.55rem 1rem;
+  font-size: 0.82rem;
+  color: #8696a0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.wa-mic-btn {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(37,211,102,0.35);
+}
+
 .chat-header {
   display: flex;
   align-items: center;
@@ -520,7 +716,12 @@ strong { color: var(--black); font-weight: 700; }
 .chat-bubble.delayed {
   opacity: 0;
   animation: bubbleReveal 0.5s var(--ease) both 2.6s;
-  margin-bottom: 0;
+  margin-bottom: 0.75rem;
+}
+
+.chat-bubble.chat-seq {
+  opacity: 0;
+  animation: bubbleReveal 0.45s var(--ease) both var(--seq-delay, 3.2s);
 }
 
 @keyframes dotBounce {
@@ -1264,8 +1465,42 @@ strong { color: var(--black); font-weight: 700; }
 }
 
 @media (max-width: 900px) {
+  /* ---- NAV / HEADER ---- */
   .nav-links { display: none; }
 
+  .nav { height: auto; padding: 0.6rem 0; }
+
+  .nav-container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    flex-shrink: 0;
+  }
+  .logo-img {
+    max-height: 36px;
+  }
+
+  /* Hide the helper text on mobile - it clutters the header */
+  .cta-helper-text { display: none !important; }
+
+  /* Compact CTA button in the nav */
+  .btn-nav {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.78rem !important;
+    gap: 0.4rem !important;
+    border-radius: 2rem;
+    white-space: nowrap;
+  }
+  .btn-nav svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* ---- HERO ---- */
   .hero {
     min-height: 100svh;
     align-items: flex-end;
@@ -1286,35 +1521,173 @@ strong { color: var(--black); font-weight: 700; }
 
   .hero-content {
     margin: 0;
-    padding: 2rem 2rem 5rem;
+    padding: 2rem 1.5rem 4rem;
     max-width: 100%;
     text-align: center;
   }
 
-  .tag-line { margin: 0 auto 2rem; }
+  .tag-line { margin: 0 auto 1.5rem; }
   .hero-desc { margin-left: auto; margin-right: auto; }
   .hero-chat-card { margin-left: auto; margin-right: auto; }
-  .hero-stats { justify-content: center; margin: 0 auto; }
+  .hero-stats {
+    justify-content: center;
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+    gap: 0;
+    width: 100%;
+  }
+  .stat-num { font-size: 1.5rem; }
+  .stat-label { font-size: 0.65rem; }
+  .stat-divider { margin: 0 1rem; }
   .hero-actions { display: flex; justify-content: center; }
-
   .scroll-indicator { display: none; }
 
+  /* ---- ALL SECTIONS: CENTERED ON MOBILE ---- */
+  .manifesto,
+  .journey,
+  .benefits,
+  .steps-section,
+  .faq {
+    padding: 5rem 0;
+  }
+
+  .section-title {
+    margin-bottom: 3rem;
+  }
+
+  /* ---- MANIFESTO / QUEM É A CLARA ---- */
   .manifesto-grid,
   .benefits-container {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 3rem;
   }
 
+  .manifesto-text {
+    text-align: center;
+  }
+  .manifesto-text .section-label {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .manifesto-text h2 {
+    text-align: center;
+  }
+  .manifesto-text > p {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .feature-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.25rem 1rem;
+  }
+  .feature-item:hover {
+    transform: translateY(-4px);
+  }
+
+  /* ---- JOURNEY ---- */
   .journey-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-
   .journey-step-num { font-size: 3rem; }
+  .journey-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    min-height: auto;
+  }
+  .journey-icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .journey-tag {
+    text-align: center;
+  }
 
+  /* ---- BENEFITS ---- */
+  .benefits-content {
+    text-align: center;
+  }
+  .benefits-content .section-label {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .benefits-content h2 {
+    text-align: center;
+  }
+
+  .benefit-points li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  .benefit-points li:hover {
+    transform: translateY(-3px);
+  }
+  .benefit-points h4 {
+    text-align: center;
+  }
+  .benefit-points p {
+    text-align: center;
+  }
+
+  /* ---- STEPS / COMO A CLARA TRABALHA ---- */
+  .steps-premium-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .step-premium-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    gap: 0.75rem;
+  }
+  .step-premium-num {
+    font-size: 2rem;
+  }
+  .step-premium-body h4,
+  .step-premium-body p {
+    text-align: center;
+  }
+
+  .manifesto-end {
+    padding: 3rem 1.5rem;
+    margin-top: 3rem;
+  }
+  .manifesto-end-lead {
+    font-size: 0.95rem;
+  }
+  .manifesto-end-quote {
+    font-size: 1.2rem;
+  }
+
+  /* ---- FAQ ---- */
+  .faq-item summary {
+    padding: 1.25rem 1.25rem;
+    font-size: 0.92rem;
+  }
+  .faq-content {
+    padding: 1.25rem 1.5rem 1.75rem;
+  }
+  .faq-item:hover {
+    transform: none;
+  }
+
+  /* ---- FOOTER ---- */
+  .footer-cta-block {
+    padding: 4rem 0;
+  }
   .footer-cta-inner {
     flex-direction: column;
     text-align: center;
+    gap: 2rem;
+  }
+  .footer-cta-text h2 {
+    font-size: 1.6rem;
   }
 
   .footer-bottom-inner {
@@ -1322,4 +1695,15 @@ strong { color: var(--black); font-weight: 700; }
     gap: 1rem;
     text-align: center;
   }
+}
+
+/* Extra small screens (< 400px) */
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero-desc {
+    font-size: 0.95rem;
+  }
+  .stat-divider { margin: 0 0.75rem; }
 }
